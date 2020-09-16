@@ -18,7 +18,7 @@ def add(request):
         
         # Error handling for no input
         # Error handling for no input
-        if not answer or isinstance(answer, str): 
+        if not answer or not answer.isnumeric(): 
             return render(request, 'add.html', {
                 'num_1':num_1,
                 'num_2':num_2,
@@ -57,7 +57,7 @@ def subtract(request):
         old_num_2 = request.POST['old_num_2']
         
         # Error handling for no input
-        if not answer or isinstance(answer, str): 
+        if not answer or not answer.isnumeric(): 
             return render(request, 'subtract.html', {
                 'num_1':num_1,
                 'num_2':num_2,
@@ -95,7 +95,7 @@ def multiply(request):
         old_num_2 = request.POST['old_num_2']
         
         # Error handling for no input
-        if not answer or isinstance(answer, str): 
+        if not answer or not answer.isnumeric(): 
             return render(request, 'multiply.html', {
                 'num_1':num_1,
                 'num_2':num_2,
@@ -134,7 +134,7 @@ def divide(request):
         old_num_2 = request.POST['old_num_2']
 
         # Error handling for no input
-        if not answer or isinstance(answer, str): 
+        if not answer or not answer.isnumeric(): 
             return render(request, 'divide.html', {
                 'num_1':num_1,
                 'num_2':num_2,

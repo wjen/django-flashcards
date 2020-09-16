@@ -57,7 +57,7 @@ def subtract(request):
         old_num_2 = request.POST['old_num_2']
         
         # Error handling for no input
-        if not answer or not answer.isnumeric(): 
+        if not answer or not answer.lstrip('-').isnumeric(): 
             return render(request, 'subtract.html', {
                 'num_1':num_1,
                 'num_2':num_2,

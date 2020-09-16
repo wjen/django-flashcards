@@ -19,7 +19,7 @@ def add(request):
         # Error handling for no input
         # Error handling for no input
         if not answer or isinstance(answer, str): 
-            return render(request, 'divide.html', {
+            return render(request, 'add.html', {
                 'num_1':num_1,
                 'num_2':num_2,
                 'my_answer': 'Invalid form entry',
@@ -58,7 +58,7 @@ def subtract(request):
         
         # Error handling for no input
         if not answer or isinstance(answer, str): 
-            return render(request, 'divide.html', {
+            return render(request, 'subtract.html', {
                 'num_1':num_1,
                 'num_2':num_2,
                 'my_answer': 'Invalid form entry',
@@ -96,7 +96,7 @@ def multiply(request):
         
         # Error handling for no input
         if not answer or isinstance(answer, str): 
-            return render(request, 'divide.html', {
+            return render(request, 'multiply.html', {
                 'num_1':num_1,
                 'num_2':num_2,
                 'my_answer': 'Invalid form entry',

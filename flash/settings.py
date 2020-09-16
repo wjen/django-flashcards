@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'yp(sob_hzyf%s0c5v_f$gp9%vt-q4h
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['*', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['djflashcards.herokuapp.com','*', '127.0.0.1', 'localhost']
 
 
 # Application definition

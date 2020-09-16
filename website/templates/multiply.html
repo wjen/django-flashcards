@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+
+
+{% block title %}Multiplication{% endblock %}
+{% block content %}
+<br><br>
+<center>
+<h1>Multiplication</h1>
+{% if my_answer %}
+<div class="alert alert-{{color}} alert-dismissible fade show" role="alert">
+    <strong>{{my_answer}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+
+<h1><img class='cards' src="static/images/{{num_1}}.jpg"> - <img class='cards' src="static/images/{{num_2}}.jpg"></h1>
+<form action="{% url 'multiply' %}" method="POST">
+    {% csrf_token %}
+    <br>
+    <div class="form-group">
+        <input type="text" autofocus class="form-control" placeholder="type your answer"
+        name='answer'>
+        <input type="hidden" name="old_num_1" value="{{num_1}}">
+        <input type="hidden" name="old_num_2" value="{{num_2}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</center>
+{% endblock %}

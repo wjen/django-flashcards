@@ -15,7 +15,7 @@
 </div>
 {% endif %}
 
-<h1><img class='cards' src="static/images/{{num_1}}.jpg"> + <img class='cards' src="static/images/{{num_2}}.jpg"></h1>
+<h1><img class='cards' src="static/images/{{num_1}}.jpg"> / <img class='cards' src="static/images/{{num_2}}.jpg"></h1>
 <form action="{% url 'divide' %}" method="POST">
     {% csrf_token %}
     <br>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from random import randint
+import re
 
 
 # Create your views here.
@@ -128,13 +129,13 @@ def divide(request):
     num_2 = randint(1,9)
 
     if request.method == "POST":
-        
         answer = request.POST['answer']
+        result = re.match("[-+]?\.?\d+\.?[\d]?$", answer)
         old_num_1 = request.POST['old_num_1']
         old_num_2 = request.POST['old_num_2']
 
         # Error handling for no input
-        if not answer or not answer.isnumeric(): 
+        if not answer or result is None: 
             return render(request, 'divide.html', {
                 'num_1':num_1,
                 'num_2':num_2,
